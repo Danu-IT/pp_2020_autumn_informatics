@@ -1,4 +1,5 @@
 // Copyright 2020 Tareev Daniil
+
 #include <mpi.h>
 #include <vector>
 #include <random>
@@ -67,4 +68,4 @@ std::vector<int> getParallelOperations(std::vector<int> global_mat, int cols, in
         MPI_Send(local_result.data(), delta, MPI_INT, 0, 0, MPI_COMM_WORLD);
     }
     return result;
-}
+} 

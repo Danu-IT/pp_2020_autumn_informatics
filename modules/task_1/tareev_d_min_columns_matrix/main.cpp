@@ -1,4 +1,5 @@
 // Copyright 2020 Tareev Daniil
+
 #include <gtest-mpi-listener.hpp>
 #include <gtest/gtest.h>
 #include <vector>
@@ -55,8 +56,8 @@ TEST(Parallel_Operations_MPI, Matrix_75x31) {
 TEST(Parallel_Operations_MPI, Matrix_67x44) {
     int rank;
     MPI_Comm_rank(MPI_COMM_WORLD, &rank);
-    int rows = 51;
-    int cols = 1;
+    int rows = 67;
+    int cols = 44;
     std::vector<int> global_vec;
     if (rank == 0) {
         global_vec = transposeMatrix(randomMatrix(cols, rows), cols, rows);
@@ -71,8 +72,8 @@ TEST(Parallel_Operations_MPI, Matrix_67x44) {
 TEST(Parallel_Operations_MPI, Matrix_4x90) {
     int rank;
     MPI_Comm_rank(MPI_COMM_WORLD, &rank);
-    int rows = 1;
-    int cols = 51;
+    int rows = 4;
+    int cols = 90;
     std::vector<int> global_vec;
     if (rank == 0) {
         global_vec = transposeMatrix(randomMatrix(cols, rows), cols, rows);
@@ -97,4 +98,4 @@ int main(int argc, char** argv) {
 
     listeners.Append(new GTestMPIListener::MPIMinimalistPrinter);
     return RUN_ALL_TESTS();
-}
+} 
