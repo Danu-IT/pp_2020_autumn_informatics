@@ -1,6 +1,6 @@
 // Copyright 2020 Tareev Daniil
-#ifndef MODULES_TASK_3_TAREEV_D_T_H_H_
-#define MODULES_TASK_3_TAREEV_D_T_H_H_
+#ifndef MODULES_TASK_3_TAREEV_D_PARALL_PARALL_H_
+#define MODULES_TASK_3_TAREEV_D_PARALL_PARALL_H_
 
 #include <cmath>
 
@@ -65,4 +65,4 @@ resultTwoVar solveTwoVarSequential(const double& _a1, const double& _b1, const d
 double(*func)(double x, double y), const double& _eps = 0.1, const int& _Nmax = 100, const double& _epsOneVar = 0.1,
 const int& _NmaxOneVar = 100, const double& _r_par = 2.0);
 
-#endif  // MODULES_TASK_3_TAREEV_D_T_H_H_
+#endif  // MODULES_TASK_3_TAREEV_D_PARALL_PARALL_H_
