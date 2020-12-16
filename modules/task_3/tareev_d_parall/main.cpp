@@ -5,7 +5,7 @@
 #include <gtest/gtest.h>
 #include "./parall.h"
 
-TEST(Global_Optimization_MPI, Test_First_Function) {
+TEST(parall_MPI, Test_First_Function) {
     int rank;
     MPI_Comm_rank(MPI_COMM_WORLD, &rank);
     double(*fptr)(double, double) = f1;
@@ -16,7 +16,7 @@ TEST(Global_Optimization_MPI, Test_First_Function) {
     }
 }
 
-TEST(Global_Optimization_MPI, Test_Second_Function) {
+TEST(parall_MPI, Test_Second_Function) {
     int rank;
     MPI_Comm_rank(MPI_COMM_WORLD, &rank);
     double(*fptr)(double, double) = f2;
@@ -27,7 +27,7 @@ TEST(Global_Optimization_MPI, Test_Second_Function) {
     }
 }
 
-TEST(Global_Optimization_MPI, Test_Third_Function) {
+TEST(parall_MPI, Test_Third_Function) {
     int rank;
     MPI_Comm_rank(MPI_COMM_WORLD, &rank);
     double(*fptr)(double, double) = f3;
@@ -38,7 +38,7 @@ TEST(Global_Optimization_MPI, Test_Third_Function) {
     }
 }
 
-TEST(Global_Optimization_MPI, Test_Fourth_Function) {
+TEST(parall_MPI, Test_Fourth_Function) {
     int rank;
     MPI_Comm_rank(MPI_COMM_WORLD, &rank);
     double(*fptr)(double, double) = f4;
@@ -49,7 +49,7 @@ TEST(Global_Optimization_MPI, Test_Fourth_Function) {
     }
 }
 
-TEST(Global_Optimization_MPI, Test_Fifth_Function) {
+TEST(parall_MPI, Test_Fifth_Function) {
     int rank;
     MPI_Comm_rank(MPI_COMM_WORLD, &rank);
     double(*fptr)(double, double) = f5;
@@ -60,7 +60,7 @@ TEST(Global_Optimization_MPI, Test_Fifth_Function) {
     }
 }
 
-TEST(Global_Optimization_MPI, Test_Sixth_Function) {
+TEST(parall_MPI, Test_Sixth_Function) {
     int rank;
     MPI_Comm_rank(MPI_COMM_WORLD, &rank);
     double(*fptr)(double, double) = f6;
