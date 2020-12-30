@@ -10,13 +10,13 @@ TEST(Parallel_Operations_MPI, Test1) {
     MPI_Comm_rank(MPI_COMM_WORLD, &rank);
     int a, b, N;
     a = 1;
-    b = 10;
-    N = 10000;
+    b = 3;
+    N = 20000;
     double dop = static_cast<double>(b - a) / N;
-    double parallel_result = ParallelFunc(N, a, b) * dop;
+    double parallel_result = ParallelFunc(N, a, b, 0) * dop;
     if (rank == 0) {
-        double easy_result = EasyFunc(N, a, b);
-        ASSERT_NEAR(parallel_result, easy_result, 1);
+        double easy_result = EasyFunc(N, a, b, 0);
+        ASSERT_NEAR(parallel_result, easy_result, 10);
     }
 }
 
@@ -24,14 +24,14 @@ TEST(Parallel_Operations_MPI, Test2) {
     int rank;
     MPI_Comm_rank(MPI_COMM_WORLD, &rank);
     int a, b, N;
-    a = 1;
-    b = 100;
-    N = 1000;
+    a = 25;
+    b = 27;
+    N = 20000;
     double dop = static_cast<double>(b - a) / N;
-    double parallel_result = ParallelFunc(N, a, b) * dop;
+    double parallel_result = ParallelFunc(N, a, b, 1) * dop;
     if (rank == 0) {
-        double easy_result = EasyFunc(N, a, b);
-        ASSERT_NEAR(parallel_result, easy_result, 500);
+        double easy_result = EasyFunc(N, a, b, 1);
+        ASSERT_NEAR(parallel_result, easy_result, 10);
     }
 }
 
@@ -41,12 +41,12 @@ TEST(Parallel_Operations_MPI, Test3) {
     int a, b, N;
     a = -3;
     b = -1;
-    N = 1000;
+    N = 20000;
     double dop = static_cast<double>(b - a) / N;
-    double parallel_result = ParallelFunc(N, a, b) * dop;
+    double parallel_result = ParallelFunc(N, a, b, 0) * dop;
     if (rank == 0) {
-        double easy_result = EasyFunc(N, a, b);
-        ASSERT_NEAR(parallel_result, easy_result, 2);
+        double easy_result = EasyFunc(N, a, b, 0);
+        ASSERT_NEAR(parallel_result, easy_result, 10);
     }
 }
 
@@ -55,12 +55,12 @@ TEST(Parallel_Operations_MPI, Test4) {
     MPI_Comm_rank(MPI_COMM_WORLD, &rank);
     int a, b, N;
     a = 1;
-    b = 10;
-    N = 100;
+    b = 3;
+    N = 20000;
     double dop = static_cast<double>(b - a) / N;
-    double parallel_result = ParallelFunc(N, a, b) * dop;
+    double parallel_result = ParallelFunc(N, a, b, 0) * dop;
     if (rank == 0) {
-        double easy_result = EasyFunc(N, a, b);
+        double easy_result = EasyFunc(N, a, b, 0);
         ASSERT_NEAR(parallel_result, easy_result, 10);
     }
 }
@@ -70,12 +70,12 @@ TEST(Parallel_Operations_MPI, Test5) {
     MPI_Comm_rank(MPI_COMM_WORLD, &rank);
     int a, b, N;
     a = -1;
-    b = 10;
-    N = 1000;
+    b = 2;
+    N = 20000;
     double dop = static_cast<double>(b - a) / N;
-    double parallel_result = ParallelFunc(N, a, b) * dop;
+    double parallel_result = ParallelFunc(N, a, b, 0) * dop;
     if (rank == 0) {
-        double easy_result = EasyFunc(N, a, b);
+        double easy_result = EasyFunc(N, a, b, 0);
         ASSERT_NEAR(parallel_result, easy_result, 10);
     }
 }
